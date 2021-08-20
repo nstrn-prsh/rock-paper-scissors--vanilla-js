@@ -12,13 +12,28 @@ eventListeners()
 function eventListeners(){
     rock_div.addEventListener('click',()=>{
         // console.log('rock');
+        game('r')
     })
     paper_div.addEventListener('click',()=>{
         // console.log('paper');
+        game('p')
     })
     scissors_div.addEventListener('click',()=>{
         // console.log('scissors');
+        game('s')
     })
 }
 
 // functions
+// get pc choice
+function getPcChoice(){
+    const choices = ['r','p','s']
+    const randomNum = Math.floor(Math.random()*3)
+    return choices[randomNum]
+}
+
+// compare user and ps choice
+function game(userChoice){
+    console.log(`user : ${userChoice}`);
+    console.log(`computer : ${getPcChoice()}`);
+}
