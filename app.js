@@ -6,6 +6,9 @@ const rock_div = document.querySelector("#rock");
 const paper_div = document.querySelector("#paper");
 const scissors_div = document.querySelector("#scissors");
 
+const userScore_span = document.getElementById('user-score')
+const pcScore_span = document.getElementById('comp-score')
+
 // eventListeners
 //  new: eventListeners toye function tarif mikonim ke motmaen shim kar mikone
 eventListeners();
@@ -42,19 +45,38 @@ function game(userChoice) {
           case "rs":
           case "pr":
           case "sp":
-               console.log("You Won!");
+               win();
                break;
           case "rp":
           case "sr":
           case "ps":
-               console.log("You Lost!");
+               lose();
                break;
           case "rr":
           case "pp":
           case "ss":
-               console.log("You Tied!");
+               tie();
                break;
           default:
                break;
      }
+}
+
+function win() {
+    //  console.log("You Won!");
+    userScore ++
+    userScore_span.innerHTML = userScore
+    pcScore_span.innerHTML = pcScore
+}
+
+function lose() {
+    //  console.log("You Lost!");
+    pcScore ++
+    userScore_span.innerHTML = userScore
+    pcScore_span.innerHTML = pcScore
+}
+
+function tie() {
+    //  console.log("You Tied!");
+
 }
